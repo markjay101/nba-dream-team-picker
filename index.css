@@ -1,0 +1,271 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Mono', monospace;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+header{
+    width: 100%;
+    background-color: #1d3557;
+    padding: 1rem 0 1rem 3rem;
+}
+footer{
+    margin-top: auto;
+    text-align: center;
+    color: #00152488;
+    padding: 20px 0;
+    border-top: 2px solid #00152488;
+    box-shadow: inset 0 2px 2px -2px #333;
+    width: 80%;
+}
+header h1{
+    font-size: 25px;
+    color: white;
+}
+.players{
+    width: 85%;
+    height: 500px;
+    padding: 0 20px;
+    margin: 20px 10px 50px;
+    border: 10px solid #1d3557;
+    border-radius: 20px;
+    display: flex;
+    overflow: scroll;
+}
+.players::-webkit-scrollbar,
+.generated-team::-webkit-scrollbar,
+.enemy-team::-webkit-scrollbar,
+.team-with-stats::-webkit-scrollbar,
+.enemy-with-stats::-webkit-scrollbar,
+.tables::-webkit-scrollbar{
+    display: none;
+}
+.players .card{
+    background-color: white;
+    min-width: 200px;
+    min-height: 400px;
+    padding: 1rem;
+    margin: auto 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px black;
+    position: relative;
+}
+.players .card img{
+    width: 100%;
+}
+.players .card button{
+    display: none;
+    border-radius: 5px;
+    position: absolute;
+    width: 100px;
+    padding: 10px 0;
+    top: 80%;
+    left: 25%;
+}
+.players .card:hover{
+    transform: scale(1.15);
+}
+.players .card:hover button{
+    display: block;
+    color: #1d3557;
+    background-color: #a8dadca3;
+    border: 1px solid #1d3557;
+    
+}
+.players .card button:active{
+    background-color: #1d3557;
+    color: white;
+}
+.generate{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 40px 0 0 0;
+    align-items: center;
+    color: #1d3557;
+    width: 80%;
+}
+.generate p, .generate span{
+    font-size: 25px;
+}
+.generate button{
+    font-size: 15px;
+    width: 200px;
+    padding: 10px 15px;
+    margin: 5px 5px;
+    background-color: white;
+    border: 2px solid #1d3557;
+    color: #1d3557;
+    border-radius: 5px;
+}
+.generate span{
+    margin: 0 10px;
+    padding: 5px 0;
+    text-align: center;
+    background-color: #a8dadc;
+    width: 50px;
+    box-shadow: inset 0 0 2px black;
+}
+#generate-team-btn:active{
+    color: white;
+    background-color: #1d3557;
+    border: none;
+}
+
+.players .card button:disabled, 
+#generate-team-btn:disabled,
+#generate-enemy-btn:disabled,  
+#enemy-btn:disabled{
+    border: 2px solid rgb(189, 189, 189);
+    color: rgb(189, 189, 189);
+    background-color: white;
+}
+.players .card button:disabled+img{
+    opacity: 0.5;
+}
+.teams{
+    width: 85%;
+    height: fit-content;
+    margin: 0px 10px 100px;
+    padding: 50px 5px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.team-with-stats, .enemy-with-stats{
+    width: 45%;
+    height: 500px;
+    border-radius: 20px;
+    padding-bottom: 10px;
+}
+.generated-team, .enemy-team{
+    height: 80%;
+    display: flex;
+    overflow: scroll;
+}
+.enemy-with-stats{
+    border: 10px solid #e63946;
+    position: relative;
+}
+.team-with-stats{
+    border: 10px solid #306281;
+}
+.teams span{
+    font-size: 50px;
+    color: #1d3557;
+    margin: 0 20px;
+    background-image: radial-gradient(#306281, #e63946);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+}   
+.generated-team .card, .enemy-team .card{
+    background-color: white;
+    min-width: 180px;
+    min-height: 200px;
+    padding: 1rem;
+    margin: auto 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px black;
+    position: relative;
+}
+.generated-team .card img, .enemy-team .card img{
+    width: 100%;
+}
+.tables{
+    margin-top: auto;
+    width: 100%;
+    height: 105px;
+    overflow: scroll;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+}
+table, th, td{
+    text-align: center;
+}
+td{
+    padding: 0 3px;
+}
+#enemy-players-stats,
+#enemy-players-stats th,
+#enemy-players-stats td {
+    border: 1px solid #e63946;
+}
+#players-stats,
+#players-stats th,
+#players-stats td {
+    border: 1px solid #1d3557;
+}
+#enemy-btn{
+    height: fit-content;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 15px;
+    width: 200px;
+    padding: 10px 15px;
+    margin: auto;
+    background-color: white;
+    border: 2px solid #e63946;
+    color: #e63946;
+    border-radius: 5px;
+}
+#enemy-btn:active{
+    color: white;
+    background-color: #e63946;
+}
+.teams{
+    display: none;
+}
+#generate-enemy-btn {
+    font-size: 15px;
+    width: 200px;
+    padding: 10px 15px;
+    margin: 5px 5px;
+    background-color: white;
+    border: 2px solid #e63946;
+    color: #e63946;
+    border-radius: 5px;
+}
+#generate-enemy-btn{
+    width: 220px;
+}
+#generate-enemy-btn:active{
+    background-color: #e63946;
+    color: white;
+}
+
+@media only screen and (max-width: 400px) {
+    .team-with-stats, .enemy-with-stats{
+        width: 100%;
+        height: 500px;
+    }
+    .teams{
+        flex-direction: column;
+        height: fit-content;
+    } 
+}
+@media only screen and (max-width: 700px) {
+    .team-with-stats, .enemy-with-stats{
+        width: 100%;
+        height: 500px;
+    }
+    .teams{
+        flex-direction: column;
+        height: fit-content;
+    } 
+}

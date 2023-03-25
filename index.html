@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,700;1,600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream NBA Team Picker</title>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>NBA Dream Team Picker</h1>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="generate">
+            <p>Pick 5 Players</p>
+            <span id="number-pick">0</span>
+            <button id="generate-team-btn">Generate Team</button>
+            <button id="generate-enemy-btn">Generate Enemy Team</button>
+            <button id="reset-pick-btn">Reset Team Pick</button>
+        </div>
+        <div class="players">
+    
+        </div>
+        <div class="teams">
+            <div class="team-with-stats">
+                <div class="generated-team">
+        
+                </div>
+                <div class="tables">
+                    <table id="players-stats">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>PPG</th>
+                                <th>RPG</th>
+                                <th>APG</th>
+                                <th>FG%</th>
+                                <th>3P%</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>        
+            </div>
+            <span>VS</span>
+            <div class="enemy-with-stats">
+                <button id="enemy-btn">Pick Enemy Team</button>
+                <div class="enemy-team">
+                    
+                </div>
+                <div class="tables" id="enemy-table">
+                    <table id="enemy-players-stats">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>PPG</th>
+                                <th>RPG</th>
+                                <th>APG</th>
+                                <th>FG%</th>
+                                <th>3P%</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <footer>
+        <h3>Created by Mark Jay</h3>
+    </footer>
+    
+    <script src="index.js" type="module"></script>
+</body>
+</html>
